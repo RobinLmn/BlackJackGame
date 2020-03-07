@@ -312,6 +312,7 @@ void BlackJackGame::play()
         {
             cout << "Player busts." << endl;
             (*player).announce(LOST);
+            delete player;
             endRound();
             return;
         }
@@ -355,5 +356,6 @@ void BlackJackGame::play()
 
     // end of round. Clear casino and player's hand. Shuffle the deck.
     endRound();
+    delete player;
 }
 
